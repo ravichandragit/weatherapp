@@ -8,7 +8,7 @@ document.querySelector('form').addEventListener('submit', (e) => {
     document.querySelector('.flocation').innerHTML = 'Loading..';
     document.querySelector('.forecast').innerHTML = '';
 
-    fetch('http://localhost:3000/weather?location='+address).then((respose) => {
+    fetch('/weather?location='+address).then((respose) => {
         respose.json().then((data) => {
             //console.log(data);
             if(data.Error){

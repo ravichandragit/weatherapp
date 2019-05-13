@@ -3,6 +3,7 @@ const express = require('express');
 const hbs = require('hbs');
 const geoLocation = require('../utils/geocode');
 const weatherForecast = require('../utils/forecast');
+const port = process.env.PORT || 3000;
 
 const app = express();
 const publicDirectoryPath = path.join(__dirname,'../public')
@@ -72,6 +73,6 @@ app.get('*',(req,res) => {
     });
 })
 
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log('express server is up');
 })
